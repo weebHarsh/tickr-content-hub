@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src=no --import-alias \"@/*\" --use-npm)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(node -e:*)",
+      "Bash(npx next build:*)",
+      "Bash(timeout 30 npx next dev:*)",
+      "Bash(for f in app/compliance/page.tsx app/compliance/validate/page.tsx app/advocacy/page.tsx app/partners/page.tsx \"app/partners/[id]/page.tsx\" app/analytics/page.tsx)",
+      "Bash(do sed -i '/^export const dynamic = \"\"force-dynamic\"\"$/d' \"$f\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(timeout 15 npx next dev:*)",
+      "Bash(ls:*)",
+      "Bash(gh auth status:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
