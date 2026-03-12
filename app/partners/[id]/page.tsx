@@ -23,7 +23,7 @@ const tierColors: Record<string, string> = {
 
 export default function PartnerDetailPage() {
   const params = useParams()
-  const partnerId = params.id as string
+  const partnerId = (params?.id as string) || ""
   const partner = mockPartners.find((p) => p.id === partnerId) || mockPartners[0]
   const partnerCodes = mockReferralCodes.filter((c) => c.partnerId === partner.id)
   const partnerCreatives = mockPartnerCreatives.filter((c) => c.partnerId === partner.id)
